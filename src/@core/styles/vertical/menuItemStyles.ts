@@ -3,7 +3,7 @@ import { lighten } from '@mui/material/styles'
 import type { Theme } from '@mui/material/styles'
 
 // Type Imports
-import type { MenuItemStyles } from '@menu/types'
+import type { MenuItemStyles, MenuItemStylesParams } from '@menu/types'
 
 // Util Imports
 import { menuClasses } from '@menu/utils/menuClasses'
@@ -23,13 +23,10 @@ const menuItemStyles = (theme: Theme): MenuItemStyles => {
         }
       },
       [`&:not(.${menuClasses.subMenuRoot}) > .${menuClasses.button}.${menuClasses.active}`]: {
-        color: 'var(--mui-palette-primary-contrastText)',
+        color: 'var(--mui-palette-customColors-textDefaultHover)',
         background:
           theme.direction === 'ltr'
-            ? `linear-gradient(270deg, var(--mui-palette-primary-main), ${lighten(
-                theme.palette.primary.main,
-                0.5
-              )} 100%)`
+            ? `var(--mui-palette-customColors-bodyBgHover)`
             : `linear-gradient(270deg, ${lighten(
                 theme.palette.primary.main,
                 0.5
@@ -39,7 +36,7 @@ const menuItemStyles = (theme: Theme): MenuItemStyles => {
         }
       }
     },
-    button: ({ active }) => ({
+    button: ({ active }: MenuItemStylesParams) => ({
       paddingBlock: theme.spacing(2),
       '&:has(.MuiChip-root)': {
         paddingBlock: theme.spacing(1.75)
@@ -50,21 +47,22 @@ const menuItemStyles = (theme: Theme): MenuItemStyles => {
       borderEndEndRadius: 50,
       ...(!active && {
         '&:hover, &:focus-visible': {
-          backgroundColor: 'var(--mui-palette-action-hover)'
+          backgroundColor: 'var(--mui-palette-customColors-bodyBgHover)',
+          color: 'var(--mui-palette-customColors-textDefaultHover)'
         },
         '&[aria-expanded="true"]': {
-          backgroundColor: 'var(--mui-palette-action-selected)'
+          backgroundColor: 'var(--mui-palette-customColors-bodyBgHover)'
         }
       })
     }),
-    icon: ({ level }) => ({
+    icon: ({ level }: MenuItemStylesParams) => ({
       ...(level === 0 && {
         fontSize: '1.375rem',
         marginInlineEnd: theme.spacing(2)
       }),
       ...(level > 0 && {
         fontSize: '0.75rem',
-        color: 'var(--mui-palette-text-secondary)',
+        color: 'var(--mui-palette-customColors-textDefaultHover)',
         marginInlineEnd: theme.spacing(3.5)
       }),
       ...(level === 1 && {

@@ -12,7 +12,7 @@ const menuSectionStyles = (theme: Theme): MenuProps['menuSectionStyles'] => {
     root: {
       marginBlockStart: theme.spacing(7),
       [`& .${menuClasses.menuSectionContent}`]: {
-        color: 'var(--mui-palette-text-disabled)',
+        color: 'var(--mui-palette-customColors-textDefault)',
         paddingInline: '0 !important',
         paddingBlock: `${theme.spacing(1.75)} !important`,
         gap: theme.spacing(2.5),

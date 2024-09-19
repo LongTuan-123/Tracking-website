@@ -154,7 +154,10 @@ const colorSchemes = (): Theme['colorSchemes'] => {
           border: 'var(--mui-palette-divider)'
         },
         customColors: {
-          bodyBg: '#F4F5FA',
+          textDefault: '#FFFFFF',
+          textDefaultHover: '#004E94',
+          primaryColor: '#004E94',
+          bodyBgHover: '#F3F3F3',
           chatBg: '#F7F6FA',
           greyLightBg: '#FAFAFA',
           inputBorder: `rgb(var(--mui-mainColorChannels-light) / 0.22)`,
