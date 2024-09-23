@@ -109,7 +109,7 @@ const VerticalMenu = ({ scrollMenu }: { scrollMenu: (container: any, isPerfectSc
           </MenuItem>
         </MenuSection>
         <MenuSection label='Forms & Tables'>
-          <MenuItem href='/form-layouts' icon={<i className='ri-layout-4-line' />}>
+          <MenuItem href='/' icon={<i className='ri-layout-4-line' />}>
             Form Layouts
           </MenuItem>
         </MenuSection>

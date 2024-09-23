@@ -1,5 +1,7 @@
 'use client'
 
+import React from 'react'
+
 import { Box, Button, IconButton, InputAdornment, TextField } from '@mui/material'
 
 import EnhancedTable from '@/components/table/EnhancedTable'
@@ -11,6 +13,7 @@ import useAdminManagementController from '../controllers/_admin_management.contr
 import CreateAdminModal from '../components/modals/CreateAdminModal'
 import EditAdminModal from '../components/modals/EditAdminModal'
 import FilterIcon from '../../../@core/svg/FilterIcon.svg'
+import Dropdown from '../components/modals/Dropdown'
 
 const defaultFilter = {
   keyword: '',
@@ -41,10 +44,27 @@ const OrderManagement = () => {
     size: filter.size
   })
 
+  // Fake
+  const [selectedSort, setSelectedSort] = React.useState('userName')
+
+  const sortOptions = [
+    { label: 'Method', value: 'userName' },
+    { label: 'Email', value: 'email' },
+    { label: 'Status', value: 'status' },
+    { label: 'Created Date', value: 'createdDate' }
+  ]
+
+  const handleDropdownChange = (value: string | number) => {
+    setSelectedSort(value as string)
+
+    // Optionally handle sorting logic here based on selected value
+  }
+
   return (
     <>
       <h1 className='mb-6'>Order Management</h1>
       <Box className='flex mb-6 gap-5'>
+        {/* Search TextField */}
         <TextField
           sx={{
             input: {
@@ -68,6 +88,11 @@ const OrderManagement = () => {
           }}
           placeholder='Search...'
         />
+
+        {/* Dropdown for sorting */}
+        <Dropdown  value={selectedSort} options={sortOptions} onChange={handleDropdownChange} />
+
+        {/* Buttons */}
         <Button
           size='medium'
           color='info'
@@ -83,14 +108,39 @@ const OrderManagement = () => {
         <Button
           size='medium'
           variant='contained'
+          color='primary'
           style={{ padding: 15 }}
           onClick={() => {
             setAdminModal('create', true)
           }}
         >
-          + Create order
+          Save
+        </Button>
+        <Button
+          size='medium'
+          variant='outlined'
+          color='secondary'
+          style={{ padding: 15 }}
+          onClick={() => {
+            setAdminModal('create', true)
+          }}
+        >
+          Cancel
+        </Button>
+        <Button
+          size='large'
+          variant='outlined'
+          color='primary'
+          style={{ padding: 15 }}
+          onClick={() => {
+            setAdminModal('create', true)
+          }}
+        >
+          Upload
         </Button>
       </Box>
+
+      {/* Enhanced Table */}
       <EnhancedTable
         data={filterUser?.data ?? []}
         pagination={{
@@ -103,6 +153,8 @@ const OrderManagement = () => {
         hasCheckBox={false}
         handleCheckRowId={handleCheckRowId}
       />
+
+      {/* Modals */}
       {admin.create && <CreateAdminModal />}
       {admin.edit && <EditAdminModal data={data} />}
     </>
