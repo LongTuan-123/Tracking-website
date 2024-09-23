@@ -30,18 +30,19 @@ const FormLayoutsBasic = () => {
     <Card>
       <CardHeader title='Basic' />
       <CardContent>
-        <form onSubmit={e => e.preventDefault()}>
+        <form onSubmit={(e) => e.preventDefault()}>
           <Grid container spacing={5}>
             <Grid item xs={12}>
-              <TextField fullWidth label='Name' placeholder='John Doe' />
+              <TextField fullWidth placeholder='Staff name' size='medium'/>
             </Grid>
             <Grid item xs={12}>
               <TextField
                 fullWidth
                 type='email'
-                label='Email'
+                value='lam dep zai'
+                disabled
                 placeholder='johndoe@gmail.com'
-                helperText='You can use letters, numbers & periods'
+
               />
             </Grid>
             <Grid item xs={12}>
@@ -59,7 +60,7 @@ const FormLayoutsBasic = () => {
                         size='small'
                         edge='end'
                         onClick={handleClickShowPassword}
-                        onMouseDown={e => e.preventDefault()}
+                        onMouseDown={(e) => e.preventDefault()}
                         aria-label='toggle password visibility'
                       >
                         <i className={isPasswordShown ? 'ri-eye-off-line' : 'ri-eye-line'} />
@@ -84,7 +85,7 @@ const FormLayoutsBasic = () => {
                         size='small'
                         edge='end'
                         onClick={handleClickShowConfirmPassword}
-                        onMouseDown={e => e.preventDefault()}
+                        onMouseDown={(e) => e.preventDefault()}
                         aria-label='toggle confirm password visibility'
                       >
                         <i className={isConfirmPasswordShown ? 'ri-eye-off-line' : 'ri-eye-line'} />
@@ -101,7 +102,7 @@ const FormLayoutsBasic = () => {
                 </Button>
                 <div className='flex items-center justify-center gap-2'>
                   <Typography color='text.primary'>Already have an account?</Typography>
-                  <Link href='/' onClick={e => e.preventDefault()} className='text-primary'>
+                  <Link href='/' onClick={(e) => e.preventDefault()} className='text-primary'>
                     Log In
                   </Link>
                 </div>

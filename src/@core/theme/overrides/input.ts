@@ -16,6 +16,7 @@ const input: Theme['components'] = {
     styleOverrides: {
       root: {
         lineHeight: 1.6,
+        textAlign: 'center',
         '&.MuiInput-underline': {
           '&:before': {
             borderColor: 'var(--mui-palette-customColors-inputBorder)'
@@ -62,18 +63,21 @@ const input: Theme['components'] = {
     styleOverrides: {
       root: {
         '&:not(.Mui-focused):not(.Mui-error):not(.Mui-disabled):hover .MuiOutlinedInput-notchedOutline': {
-          borderColor: 'var(--mui-palette-action-active)'
+          borderColor: 'var(--mui-palette-customColors-borderColor)'
         },
         '&.Mui-disabled .MuiOutlinedInput-notchedOutline': {
-          borderColor: 'var(--mui-palette-action-disabledBackground)'
+          borderColor: 'var(--mui-palette-customColors-borderColor)',
+          backgroundColor: 'var(--mui-palette-customColors)'
         }
       },
       input: ({ theme, ownerState }) => ({
         ...(ownerState?.size === 'medium' && {
           '&:not(.MuiInputBase-inputMultiline, .MuiInputBase-inputAdornedStart)': {
-            paddingBlock: theme.spacing(4)
+            borderColor: 'var(--mui-palette-customColors-borderColor)',
+            padding: theme.spacing(2, 3),
+            borderRadius: theme.spacing(0.25)
           },
-          height: '1.5em'
+          height: theme.spacing(6)
         }),
         '& ~ .MuiOutlinedInput-notchedOutline': {
           borderColor: 'var(--mui-palette-customColors-inputBorder)'

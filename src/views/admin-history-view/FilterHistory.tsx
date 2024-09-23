@@ -7,7 +7,7 @@ import { Box } from '@mui/material'
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
-import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker'
+import { DatePicker } from '@mui/x-date-pickers/DatePicker'
 
 import dayjs from '@/utils/dayjs'
 import type { IFilterAdminHistoryViewProps } from '@/types/admin-history-view/admin-history-props.type'
@@ -21,27 +21,39 @@ export const FilterHistory: React.FC<Props> = ({ filter, setFilter }) => {
   return (
     <Box
       component='form'
-      sx={{ '& .MuiTextField-root': { m: 1, width: '25ch' } }}
-      noValidate
-      autoComplete='off'
+      sx={{
+        '& .MuiTextField-root': {
+          m: 1,
+          width: '25ch',
+          border: 'var(--mui-palette-customColors-borderColor)',
+          borderRadius: '4px'
+        }
+      }}
       className='mb-6 flex gap-4 items-center flex-wrap w-full'
     >
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <DemoContainer
-          components={['DateTimePicker', 'DateTimePicker']}
+          components={['DatePicker']}
           sx={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', width: '100%', flexDirection: 'row' }}
         >
-          <DateTimePicker
-            label='From'
-            name='fromDate'
-            value={dayjs.utc(filter.fromDate)}
+          <DatePicker
+            name='date'
+            value={dayjs.utc(filter.fromDate)} // Assuming 'fromDate' as the selected date
             onChange={(newValue) => setFilter((prev) => ({ ...prev, fromDate: dayjs.utc(newValue).toDate() }))}
-          />
-          <DateTimePicker
-            label='To'
-            name='toDate'
-            value={dayjs.utc(filter.toDate)}
-            onChange={(newValue) => setFilter((prev) => ({ ...prev, toDate: dayjs.utc(newValue).toDate() }))}
+
+            // Disable any validation (such as min/max dates)
+            slotProps={{
+              textField: {
+                error: false, // Ensure no error is shown
+                helperText: '' // Clear any validation messages
+              }
+            }}
+            sx={{
+              '& .MuiOutlinedInput-root': {
+                border: 'var(--mui-palette-customColors-borderColor)',
+                borderRadius: '4px'
+              }
+            }}
           />
         </DemoContainer>
       </LocalizationProvider>

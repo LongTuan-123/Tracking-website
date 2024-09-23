@@ -154,7 +154,10 @@ const colorSchemes = (): Theme['colorSchemes'] => {
           border: 'var(--mui-palette-divider)'
         },
         customColors: {
-          navBg: '#FF0000',
+          borderColor:'#929292',
+          gray: 'rgba(245, 245, 245, 0.5)',
+          black: '#000000',
+          redNav: '#FF0000',
           textDefault: '#FFFFFF',
           textDefaultHover: '#004E94',
           primaryColor: '#004E94',
@@ -164,7 +167,9 @@ const colorSchemes = (): Theme['colorSchemes'] => {
           inputBorder: `rgb(var(--mui-mainColorChannels-light) / 0.22)`,
           tableHeaderBg: '#00000',
           tooltipText: '#FFFFFF',
-          trackBg: '#F0F2F8'
+          trackBg: '#F0F2F8',
+          warningButtonColor: '#FFFFFF',
+          grayOutline: '#D1D9DD'
         }
       }
     },

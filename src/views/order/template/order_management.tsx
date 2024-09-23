@@ -123,6 +123,22 @@ const OrderManagement = () => {
     }
   }
 
+  // Fake
+  const [selectedSort, setSelectedSort] = React.useState('userName')
+
+  const sortOptions = [
+    { label: 'Method', value: 'userName' },
+    { label: 'Email', value: 'email' },
+    { label: 'Status', value: 'status' },
+    { label: 'Created Date', value: 'createdDate' }
+  ]
+
+  const handleDropdownChange = (value: string | number) => {
+    setSelectedSort(value as string)
+
+    // Optionally handle sorting logic here based on selected value
+  }
+
   return (
     <>
       <h1 className='mb-6'>Order Management</h1>
