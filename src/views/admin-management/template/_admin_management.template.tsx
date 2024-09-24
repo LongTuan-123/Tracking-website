@@ -54,7 +54,6 @@ const AdminManagement = () => {
           + Create admin
         </Button>
         <TextField
-          size="medium"
           sx={{
             input: {
               padding: '15px 5px'

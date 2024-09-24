@@ -16,7 +16,6 @@ const input: Theme['components'] = {
     styleOverrides: {
       root: {
         lineHeight: 1.6,
-        textAlign: 'center',
         '&.MuiInput-underline': {
           '&:before': {
             borderColor: 'var(--mui-palette-customColors-inputBorder)'

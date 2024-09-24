@@ -22,9 +22,9 @@ const FormLayoutsBasic = () => {
   const [isPasswordShown, setIsPasswordShown] = useState(false)
   const [isConfirmPasswordShown, setIsConfirmPasswordShown] = useState(false)
 
-  const handleClickShowPassword = () => setIsPasswordShown(show => !show)
+  const handleClickShowPassword = () => setIsPasswordShown((show) => !show)
 
-  const handleClickShowConfirmPassword = () => setIsConfirmPasswordShown(show => !show)
+  const handleClickShowConfirmPassword = () => setIsConfirmPasswordShown((show) => !show)
 
   return (
     <Card>
@@ -33,16 +33,15 @@ const FormLayoutsBasic = () => {
         <form onSubmit={(e) => e.preventDefault()}>
           <Grid container spacing={5}>
             <Grid item xs={12}>
-              <TextField fullWidth placeholder='Staff name' size='medium'/>
+              <TextField fullWidth label='Name' placeholder='John Doe' />
             </Grid>
             <Grid item xs={12}>
               <TextField
                 fullWidth
                 type='email'
-                value='lam dep zai'
-                disabled
+                label='Email'
                 placeholder='johndoe@gmail.com'
-
+                helperText='You can use letters, numbers & periods'
               />
             </Grid>
             <Grid item xs={12}>
