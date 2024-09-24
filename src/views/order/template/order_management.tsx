@@ -13,7 +13,8 @@ import useAdminManagementController from '../controllers/_admin_management.contr
 import CreateAdminModal from '../components/modals/CreateAdminModal'
 import EditAdminModal from '../components/modals/EditAdminModal'
 import FilterIcon from '../../../@core/svg/FilterIcon.svg'
-import Dropdown from '../components/modals/Dropdown'
+import Dropdown from './TestDropDown'
+
 
 const defaultFilter = {
   keyword: '',
@@ -66,6 +67,7 @@ const OrderManagement = () => {
       <Box className='flex mb-6 gap-5'>
         {/* Search TextField */}
         <TextField
+          id='outlined'
           sx={{
             input: {
               padding: '15px 5px'
@@ -89,8 +91,10 @@ const OrderManagement = () => {
           placeholder='Search...'
         />
 
+        <TextField size= 'medium'id='outlined' type='search' name='keyword' placeholder='Type in here' />
+
         {/* Dropdown for sorting */}
-        <Dropdown  value={selectedSort} options={sortOptions} onChange={handleDropdownChange} />
+        <Dropdown value={selectedSort} options={sortOptions} onChange={handleDropdownChange} />
 
         {/* Buttons */}
         <Button
