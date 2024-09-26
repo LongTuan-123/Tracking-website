@@ -83,6 +83,7 @@ declare module '@mui/material/styles' {
   // Palette
   interface Palette {
     customColors: {
+      navBg?: string
       textDefault?: string
       textDefaultHover?: string
       bodyBg?: string
