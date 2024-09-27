@@ -9,8 +9,11 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
 
+import type { Dayjs } from 'dayjs'
+
 import dayjs from '@/utils/dayjs'
 import type { IFilterAdminHistoryViewProps } from '@/types/admin-history-view/admin-history-props.type'
+
 
 type Props = {
   filter: IFilterAdminHistoryViewProps
@@ -18,6 +21,8 @@ type Props = {
 }
 
 export const FilterHistory: React.FC<Props> = ({ filter, setFilter }) => {
+  const onChangeDate = (newValue: string | number | Dayjs | Date | null | undefined) => setFilter((prev) => ({ ...prev, fromDate: dayjs.utc(newValue).toDate() }))
+
   return (
     <Box
       component='form'
@@ -39,7 +44,7 @@ export const FilterHistory: React.FC<Props> = ({ filter, setFilter }) => {
           <DatePicker
             name='date'
             value={dayjs.utc(filter.fromDate)} // Assuming 'fromDate' as the selected date
-            onChange={(newValue) => setFilter((prev) => ({ ...prev, fromDate: dayjs.utc(newValue).toDate() }))}
+            onChange={onChangeDate}
 
             // Disable any validation (such as min/max dates)
             slotProps={{

@@ -135,9 +135,14 @@ const OrderManagement = () => {
 
   const handleDropdownChange = (value: string | number) => {
     setSelectedSort(value as string)
-
-    // Optionally handle sorting logic here based on selected value
   }
+
+
+    const handleSetAdminModal = () => {
+        setAdminModal('create', true)
+
+  }
+
 
   return (
     <>
