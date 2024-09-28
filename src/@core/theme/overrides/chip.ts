@@ -44,6 +44,7 @@ const chip: Theme['components'] = {
           }
         }
       },
+   
       {
         props: { variant: 'tonal', color: 'error' },
         style: {
@@ -87,7 +88,7 @@ const chip: Theme['components'] = {
       {
         props: { variant: 'tonal', color: 'info' },
         style: {
-          backgroundColor: 'var(--mui-palette-info-lightOpacity)',
+          backgroundColor: 'var(--mui-palette-delivering-main)',
           color: 'var(--mui-palette-info-main)',
           '&.Mui-focusVisible': {
             backgroundColor: 'var(--mui-palette-info-mainOpacity)'

@@ -61,7 +61,7 @@ const button: Theme['components'] = {
                       padding: theme.spacing(2, 3.5)
                     }),
                     ...(ownerState.size === 'medium' && {
-                      padding: theme.spacing(2, 4.5)
+                      padding: theme.spacing(2, 3)
                     }),
                     ...(ownerState.size === 'large' && {
                       padding: theme.spacing(2, 5.5)
@@ -213,8 +213,8 @@ const button: Theme['components'] = {
       {
         props: { variant: 'outlined', color: 'primary' },
         style: {
-          borderColor: 'var(--mui-palette-customColors-primaryColor)',
-          color: 'var(--mui-palette-customColors-primaryColor)',
+          borderColor: 'var(--mui-palette-primary-main)',
+          color: 'var(--mui-palette-primary-main)',
           '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active, &.Mui-focusVisible:not(:has(span.MuiTouchRipple-root))':
             {
               backgroundColor: 'var(--mui-palette-primary-lighterOpacity)'
@@ -229,8 +229,8 @@ const button: Theme['components'] = {
       {
         props: { variant: 'outlined', color: 'secondary' },
         style: {
-          borderColor: 'var(--mui-palette-customColors-grayOutline)',
-          color: 'var(--mui-palette-customColors-black)',
+          borderColor: 'var(--mui-palette-secondary-main)',
+          color: 'var(--mui-palette-secondary-main)',
           '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active, &.Mui-focusVisible:not(:has(span.MuiTouchRipple-root))':
             {
               backgroundColor: 'var(--mui-palette-secondary-lighterOpacity)'
@@ -306,7 +306,7 @@ const button: Theme['components'] = {
         props: { variant: 'contained', color: 'primary' },
         style: {
           color: 'var(--mui-palette-customColors-textDefault)',
-          backgroundColor: 'var(--mui-palette-customColors-primaryColor)',
+          backgroundColor: 'var(--mui-palette-primary-main)',
           '&:not(.Mui-disabled):active, &.Mui-focusVisible:not(:has(span.MuiTouchRipple-root))': {
             backgroundColor: 'var(--mui-palette-primary-dark)'
           },

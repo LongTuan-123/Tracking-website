@@ -72,14 +72,15 @@ const input: Theme['components'] = {
       input: ({ theme, ownerState }) => ({
         ...(ownerState?.size === 'medium' && {
           '&:not(.MuiInputBase-inputMultiline, .MuiInputBase-inputAdornedStart)': {
-            borderColor: 'var(--mui-palette-customColors-borderColor)',
+            borderColor: 'var(--mui-palette-secondary-main)',
             padding: theme.spacing(2, 3),
             borderRadius: theme.spacing(0.25)
           },
-          height: theme.spacing(6)
+          height: theme.spacing(1.75)
         }),
         '& ~ .MuiOutlinedInput-notchedOutline': {
-          borderColor: 'var(--mui-palette-customColors-inputBorder)'
+          borderColor: 'var(--mui-palette-secondary-main)',
+          backgroundColor: 'var(--mui-palette-secondary-lighterOpacity)',
         }
       }),
       notchedOutline: {

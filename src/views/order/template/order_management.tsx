@@ -9,6 +9,7 @@ import FilterIcon from '../../../@core/svg/FilterIcon.svg'
 import ReloadIcon from '../../../@core/svg/ReloadIcon.svg'
 import ThreeDotsIcon from '../../../@core/svg/ThreeDotsIcon.svg'
 import CustomDataGrid from '@/components/CustomDataGrid'
+import React from 'react'
 
 const OrderManagement = () => {
   useAdminManagementController()
@@ -113,7 +114,7 @@ const OrderManagement = () => {
       case 'prepairing':
         return 'warning'
       case 'delivering':
-        return 'primary'
+        return 'info'
       case 'success':
         return 'success'
       case 'failed':
@@ -123,25 +124,8 @@ const OrderManagement = () => {
     }
   }
 
-  // Fake
-  const [selectedSort, setSelectedSort] = React.useState('userName')
-
-  const sortOptions = [
-    { label: 'Method', value: 'userName' },
-    { label: 'Email', value: 'email' },
-    { label: 'Status', value: 'status' },
-    { label: 'Created Date', value: 'createdDate' }
-  ]
-
-  const handleDropdownChange = (value: string | number) => {
-    setSelectedSort(value as string)
-  }
 
 
-    const handleSetAdminModal = () => {
-        setAdminModal('create', true)
-
-  }
 
 
   return (
@@ -150,10 +134,12 @@ const OrderManagement = () => {
       <Box className='flex mb-6 gap-5' sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
         <Box className='flex gap-5'>
           <TextField
+            size="medium"
+            variant='outlined'
             InputProps={{
               startAdornment: (
                 <InputAdornment position='start'>
-                  <IconButton className='text-textPrimary'>
+                  <IconButton className='text-textPrimary' >
                     <i className='ri-search-line' />
                   </IconButton>
                 </InputAdornment>
@@ -166,11 +152,13 @@ const OrderManagement = () => {
             }}
             placeholder='Search...'
           />
-          <Button size='medium' color='info' startIcon={<FilterIcon />} variant='contained' onClick={() => {}}>
+
+
+          <Button size='medium'variant='outlined' color='secondary'  startIcon={<FilterIcon style={{ color: 'black'  }} />} onClick={() => {}}>
             Filter
           </Button>
         </Box>
-        <Button size='medium' variant='contained' startIcon={<ReloadIcon />} onClick={() => {}}>
+        <Button size='medium' color='primary' variant='contained' startIcon={<ReloadIcon />} onClick={() => {}}>
           Sync order
         </Button>
       </Box>
