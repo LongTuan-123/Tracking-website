@@ -43,7 +43,7 @@
   ],
   "markdown.extension.toc.updateOnSave": false,
   "files.insertFinalNewline": true,
-  "editor.linkedEditing": true,
+  "editor.linkedEditing": false,
   "typescript.tsdk": "node_modules/typescript/lib",
   "cSpell.words": [
     "iconify",
