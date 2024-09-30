@@ -12,6 +12,7 @@ import '@/app/globals.css'
 // Generated Icon CSS Imports
 import '@assets/iconify-icons/generated-icons.css'
 import RootProvider from '@/libs/provider/RootProvider'
+import 'leaflet/dist/leaflet.css'
 
 export const metadata = {
   title: 'Lottery Code Sales Admin',

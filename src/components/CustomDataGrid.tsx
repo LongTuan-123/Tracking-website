@@ -7,7 +7,6 @@ import { ThemeProvider, createTheme } from '@mui/material/styles'
 import { Box, CssBaseline } from '@mui/material'
 import type {} from '@mui/x-data-grid/themeAugmentation'
 
-// Define a generic theme with proper style overrides
 const theme = createTheme({
   components: {
     MuiDataGrid: {

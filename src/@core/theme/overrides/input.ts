@@ -62,25 +62,21 @@ const input: Theme['components'] = {
     styleOverrides: {
       root: {
         '&:not(.Mui-focused):not(.Mui-error):not(.Mui-disabled):hover .MuiOutlinedInput-notchedOutline': {
-          borderColor: 'var(--mui-palette-customColors-borderColor)'
+          borderColor: 'var(--mui-palette-action-active)'
         },
         '&.Mui-disabled .MuiOutlinedInput-notchedOutline': {
-          borderColor: 'var(--mui-palette-customColors-borderColor)',
-          backgroundColor: 'var(--mui-palette-customColors)'
+          borderColor: 'var(--mui-palette-action-disabledBackground)'
         }
       },
       input: ({ theme, ownerState }) => ({
         ...(ownerState?.size === 'medium' && {
           '&:not(.MuiInputBase-inputMultiline, .MuiInputBase-inputAdornedStart)': {
-            borderColor: 'var(--mui-palette-secondary-main)',
-            padding: theme.spacing(2, 3),
-            borderRadius: theme.spacing(0.25)
+            paddingBlock: theme.spacing(4)
           },
-          height: theme.spacing(1.75)
+          height: '1.5em'
         }),
         '& ~ .MuiOutlinedInput-notchedOutline': {
-          borderColor: 'var(--mui-palette-secondary-main)',
-          backgroundColor: 'var(--mui-palette-secondary-lighterOpacity)',
+          borderColor: 'var(--mui-palette-customColors-inputBorder)'
         }
       }),
       notchedOutline: {

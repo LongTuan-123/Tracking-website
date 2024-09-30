@@ -47,24 +47,24 @@ const ThemeProvider = (props: Props) => {
   const theme = useMemo(() => {
     const newColorScheme = {
       colorSchemes: {
-        // light: {
-        //   palette: {
-        //     primary: {
-        //       main: primaryColorConfig[0].main,
-        //       light: lighten(primaryColorConfig[0].main as string, 0.2),
-        //       dark: darken(primaryColorConfig[0].main as string, 0.1)
-        //     }
-        //   }
-        // },
-        // dark: {
-        //   palette: {
-        //     primary: {
-        //       main: primaryColorConfig[0].main,
-        //       light: lighten(primaryColorConfig[0].main as string, 0.2),
-        //       dark: darken(primaryColorConfig[0].main as string, 0.1)
-        //     }
-        //   }
-        // }
+        light: {
+          palette: {
+            primary: {
+              main: primaryColorConfig[0].main,
+              light: lighten(primaryColorConfig[0].main as string, 0.2),
+              dark: darken(primaryColorConfig[0].main as string, 0.1)
+            }
+          }
+        },
+        dark: {
+          palette: {
+            primary: {
+              main: primaryColorConfig[0].main,
+              light: lighten(primaryColorConfig[0].main as string, 0.2),
+              dark: darken(primaryColorConfig[0].main as string, 0.1)
+            }
+          }
+        }
       }
     }
 

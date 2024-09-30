@@ -22,7 +22,6 @@ declare module '@mui/material/styles' {
         md: number
         lg: number
         xl: number
-        rounded:number
       }
     }
     customShadows: {
@@ -84,10 +83,7 @@ declare module '@mui/material/styles' {
   // Palette
   interface Palette {
     customColors: {
-      borderColor?: string
-      gray?: string
-      black?: string
-      redNav?: string
+      navBg?: string
       textDefault?: string
       textDefaultHover?: string
       bodyBg?: string

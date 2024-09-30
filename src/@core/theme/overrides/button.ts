@@ -61,7 +61,7 @@ const button: Theme['components'] = {
                       padding: theme.spacing(2, 3.5)
                     }),
                     ...(ownerState.size === 'medium' && {
-                      padding: theme.spacing(2, 3)
+                      padding: theme.spacing(2, 4.5)
                     }),
                     ...(ownerState.size === 'large' && {
                       padding: theme.spacing(2, 5.5)
@@ -85,19 +85,29 @@ const button: Theme['components'] = {
         fontSize: theme.typography.body2.fontSize,
         borderRadius: 'var(--mui-shape-customBorderRadius-sm)'
       }),
+<<<<<<< Updated upstream
+      sizeLarge: {
+        fontSize: '1.0625rem',
+        lineHeight: 1.529412,
+        borderRadius: 'var(--mui-shape-customBorderRadius-lg)'
+      },
+=======
       sizeMedium: ({ theme }) => ({
         borderRadius: 'var(--mui-shape-customBorderRadius-rounded)',
         minWidth: theme.spacing(22),
         height: theme.spacing(10)
       }),
       sizeLarge: ({ theme }) => ({
-        fontSize: '1.0625rem',
         lineHeight: 1.529412,
-        borderRadius: 'var(--mui-shape-customBorderRadius-rounded)',
-        minWidth: theme.spacing(36.25),
-        height: theme.spacing(10)
+        borderRadius: 'var(--mui-shape-customBorderRadius-xl)',
+        minWidth: theme.spacing(46.25),
+        height: theme.spacing(10),
+        margin:2,
+        fontWeight: 'bold',
+
       }),
 
+>>>>>>> Stashed changes
       startIcon: ({ theme, ownerState }) => ({
         ...(ownerState.size === 'small'
           ? {
@@ -112,6 +122,7 @@ const button: Theme['components'] = {
                     marginInlineEnd: theme.spacing(2.5)
                   })
             }),
+            
         ...iconStyles(ownerState.size)
       }),
       endIcon: ({ theme, ownerState }) => ({
@@ -214,7 +225,6 @@ const button: Theme['components'] = {
         props: { variant: 'outlined', color: 'primary' },
         style: {
           borderColor: 'var(--mui-palette-primary-main)',
-          color: 'var(--mui-palette-primary-main)',
           '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active, &.Mui-focusVisible:not(:has(span.MuiTouchRipple-root))':
             {
               backgroundColor: 'var(--mui-palette-primary-lighterOpacity)'
@@ -230,7 +240,6 @@ const button: Theme['components'] = {
         props: { variant: 'outlined', color: 'secondary' },
         style: {
           borderColor: 'var(--mui-palette-secondary-main)',
-          color: 'var(--mui-palette-secondary-main)',
           '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active, &.Mui-focusVisible:not(:has(span.MuiTouchRipple-root))':
             {
               backgroundColor: 'var(--mui-palette-secondary-lighterOpacity)'
@@ -305,8 +314,7 @@ const button: Theme['components'] = {
       {
         props: { variant: 'contained', color: 'primary' },
         style: {
-          color: 'var(--mui-palette-customColors-textDefault)',
-          backgroundColor: 'var(--mui-palette-primary-main)',
+          color: '#FFFFFF',
           '&:not(.Mui-disabled):active, &.Mui-focusVisible:not(:has(span.MuiTouchRipple-root))': {
             backgroundColor: 'var(--mui-palette-primary-dark)'
           },
