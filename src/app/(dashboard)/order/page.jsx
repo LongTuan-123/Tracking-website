@@ -1,4 +1,4 @@
-import OrderManagement from '@/views/order/template/order_management'
+import OrderManagement from '@/views/order/template/OrderManagement'
 
 const OrderManagementPage = () => {
   return <OrderManagement />

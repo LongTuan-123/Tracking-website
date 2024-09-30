@@ -9,7 +9,7 @@ import PerfectScrollbar from 'react-perfect-scrollbar'
 import type { VerticalMenuContextProps } from '@menu/components/vertical-menu/Menu'
 
 // Component Imports
-import { Menu, SubMenu, MenuItem, MenuSection } from '@menu/vertical-menu'
+import { Menu, SubMenu, MenuItem } from '@menu/vertical-menu'
 
 // Hook Imports
 import useVerticalNav from '@menu/hooks/useVerticalNav'
@@ -69,50 +69,18 @@ const VerticalMenu = ({ scrollMenu }: { scrollMenu: (container: any, isPerfectSc
         >
           <MenuItem href='/'>Analytics</MenuItem>
         </SubMenu>
-        <MenuSection label='Apps & Pages'>
-          <MenuItem href='/account-settings' icon={<i className='ri-user-settings-line' />}>
-            Account Settings
-          </MenuItem>
-          <MenuItem href='/users-management' icon={<i className='ri-user-settings-line' />}>
-            Users Management
-          </MenuItem>
-          <MenuItem href='/admin-management' icon={<i className='ri-user-settings-line' />}>
-            Admin Management
-          </MenuItem>
-          <MenuItem href='/admin-history-view' icon={<i className='ri-user-settings-line' />}>
-            Admin Logs
-          </MenuItem>
-          <SubMenu label='Auth Pages' icon={<i className='ri-shield-keyhole-line' />}>
-            <MenuItem href='/login' target='_blank'>
-              Login
-            </MenuItem>
-            <MenuItem href='/register' target='_blank'>
-              Register
-            </MenuItem>
-            <MenuItem href='/forgot-password' target='_blank'>
-              Forgot Password
-            </MenuItem>
-          </SubMenu>
-          <SubMenu label='Miscellaneous' icon={<i className='ri-question-line' />}>
-            <MenuItem href='/error' target='_blank'>
-              Error
-            </MenuItem>
-            <MenuItem href='/under-maintenance' target='_blank'>
-              Under Maintenance
-            </MenuItem>
-          </SubMenu>
-          <MenuItem href='/card-basic' icon={<i className='ri-bar-chart-box-line' />}>
-            Cards
-          </MenuItem>
-          <MenuItem href='/order' icon={<i className='ri-bar-chart-box-line' />}>
-            Order
-          </MenuItem>
-        </MenuSection>
-        <MenuSection label='Forms & Tables'>
-          <MenuItem href='/form-layouts' icon={<i className='ri-layout-4-line' />}>
-            Form Layouts
-          </MenuItem>
-        </MenuSection>
+        <MenuItem href='/account-settings' icon={<i className='ri-user-settings-line' />}>
+          Account Settings
+        </MenuItem>
+        <MenuItem href='/order' icon={<i className='ri-bar-chart-box-line' />}>
+          Staff
+        </MenuItem>
+        <MenuItem href='/order' icon={<i className='ri-bar-chart-box-line' />}>
+          Order
+        </MenuItem>
+        <MenuItem href='/courier-vendor' icon={<i className='ri-bar-chart-box-line' />}>
+          Courier vendor
+        </MenuItem>
       </Menu>
     </ScrollWrapper>
   )
