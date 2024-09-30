@@ -167,11 +167,11 @@ const OrderManagement = () => {
             }}
             placeholder='Search...'
           />
-          <Button size='medium' color='info' startIcon={<FilterIcon />} variant='contained'>
+          <Button  variant='outlined'  color='primary' size='medium' startIcon={<FilterIcon />} >
             Filter
           </Button>
         </Box>
-        <Button size='medium' variant='contained' startIcon={<ReloadIcon />}>
+        <Button  variant='contained' color= 'primary' size='medium' startIcon={<ReloadIcon />}>
           Sync order
         </Button>
       </Box>
