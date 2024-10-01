@@ -67,6 +67,7 @@ const ThemeProvider = (props: Props) => {
       //   }
       // }
     }
+  }
 
     const coreTheme = deepmerge(defaultCoreTheme(settings.mode || 'light', direction), newColorScheme)
 

@@ -80,12 +80,11 @@ const input: Theme['components'] = {
         }),
         '& ~ .MuiOutlinedInput-notchedOutline': {
           borderColor: 'var(--mui-palette-secondary-main)',
-          backgroundColor: 'var(--mui-palette-customColors-chatBg)'
+          backgroundColor: ''
         }
       }),
       notchedOutline: {
-        '& legend': {
-          fontSize: '0.867em'
+        '& legend': { 
         }
       }
     }

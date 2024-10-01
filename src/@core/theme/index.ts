@@ -30,7 +30,8 @@ const theme = (mode: SystemMode, direction: Theme['direction']): Theme => {
         sm: 4,
         md: 6,
         lg: 8,
-        xl: 10
+        xl: 10,
+        rounded: 20
       }
     },
     shadows: shadows(mode),

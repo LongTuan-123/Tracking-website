@@ -86,15 +86,15 @@ const button: Theme['components'] = {
         borderRadius: 'var(--mui-shape-customBorderRadius-sm)'
       }),
       sizeMedium: ({ theme }) => ({
-        borderRadius: 'var(--mui-shape-customBorderRadius-rounded)',
+        borderRadius: theme.spacing(4),
         minWidth: theme.spacing(22),
         height: theme.spacing(10)
       }),
       sizeLarge: ({ theme }) => ({
         fontSize: '1.0625rem',
         lineHeight: 1.529412,
-        borderRadius: 'var(--mui-shape-customBorderRadius-rounded)',
-        minWidth: theme.spacing(36.25),
+        borderRadius: theme.spacing(4),
+        minWidth: theme.spacing(50),
         height: theme.spacing(10)
       }),
 
