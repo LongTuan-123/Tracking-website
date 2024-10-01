@@ -125,7 +125,7 @@ const OrderManagementQRCode = () => {
           <Grid item xs={12} md={7} container>
             <Grid item xs={7}>
               <Timeline position="left">
-                {deliveryData.map((item: { type: string | number | bigint | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<React.AwaitedReactNode> | null | undefined; address: string | number | bigint | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<React.AwaitedReactNode> | null | undefined }, index: React.Key | null | undefined) => (
+                {deliveryData.map((item ,index => (
                   <TimelineItem key={index}>
                     <TimelineOppositeContent>
                       <Box className="text-lg">
