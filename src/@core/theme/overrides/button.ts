@@ -61,7 +61,7 @@ const button: Theme['components'] = {
                       padding: theme.spacing(2, 3.5)
                     }),
                     ...(ownerState.size === 'medium' && {
-                      padding: theme.spacing(2, 4.5)
+                      padding: theme.spacing(2, 3)
                     }),
                     ...(ownerState.size === 'large' && {
                       padding: theme.spacing(2, 5.5)
@@ -85,11 +85,19 @@ const button: Theme['components'] = {
         fontSize: theme.typography.body2.fontSize,
         borderRadius: 'var(--mui-shape-customBorderRadius-sm)'
       }),
-      sizeLarge: {
+      sizeMedium: ({ theme }) => ({
+        borderRadius: theme.spacing(4),
+        minWidth: theme.spacing(22),
+        height: theme.spacing(10)
+      }),
+      sizeLarge: ({ theme }) => ({
         fontSize: '1.0625rem',
         lineHeight: 1.529412,
-        borderRadius: 'var(--mui-shape-customBorderRadius-lg)'
-      },
+        borderRadius: theme.spacing(4),
+        minWidth: theme.spacing(50),
+        height: theme.spacing(10)
+      }),
+
       startIcon: ({ theme, ownerState }) => ({
         ...(ownerState.size === 'small'
           ? {
@@ -206,6 +214,7 @@ const button: Theme['components'] = {
         props: { variant: 'outlined', color: 'primary' },
         style: {
           borderColor: 'var(--mui-palette-primary-main)',
+          color: 'var(--mui-palette-primary-main)',
           '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active, &.Mui-focusVisible:not(:has(span.MuiTouchRipple-root))':
             {
               backgroundColor: 'var(--mui-palette-primary-lighterOpacity)'
@@ -221,9 +230,10 @@ const button: Theme['components'] = {
         props: { variant: 'outlined', color: 'secondary' },
         style: {
           borderColor: 'var(--mui-palette-secondary-main)',
+          color: 'var(--mui-palette-secondary-main)',
           '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active, &.Mui-focusVisible:not(:has(span.MuiTouchRipple-root))':
             {
-              backgroundColor: 'var(--mui-palette-secondary-lighterOpacity)'
+              backgroundColor: 'var(--mui-palette-customColors-chatBg)'
             },
           '&.Mui-disabled': {
             opacity: 0.45,
@@ -295,7 +305,8 @@ const button: Theme['components'] = {
       {
         props: { variant: 'contained', color: 'primary' },
         style: {
-          color: '#FFFFFF',
+          color: 'var(--mui-palette-customColors-textDefault)',
+          backgroundColor: 'var(--mui-palette-primary-main)',
           '&:not(.Mui-disabled):active, &.Mui-focusVisible:not(:has(span.MuiTouchRipple-root))': {
             backgroundColor: 'var(--mui-palette-primary-dark)'
           },

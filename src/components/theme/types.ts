@@ -47,6 +47,7 @@ declare module '@mui/material/styles' {
         md?: number
         lg?: number
         xl?: number
+        rounded?:number
       }
     }
     customShadows?: {
