@@ -11,14 +11,14 @@ const theme = createTheme({
   components: {
     MuiDataGrid: {
       styleOverrides: {
-        columnHeaders: {
+        columnHeader: {
           backgroundColor: '#C5E3FF',
-          textAlign: 'center'
-        },
-        root: {
-          '& .MuiDataGrid-columnHeaders': {
-            backgroundColor: '#C5E3FF'
+          '& .MuiDataGrid-columnHeaderTitle': {
+            fontWeight: '600'
           }
+        },
+        columnSeparator: {
+          display: 'none'
         }
       }
     }
