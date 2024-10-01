@@ -174,6 +174,7 @@ const OrderManagement = () => {
         <Button  variant='contained' color= 'primary' size='medium' startIcon={<ReloadIcon />}>
           Sync order
         </Button>
+       <h2 style={{ color: 'var(--mui-palette-primary-main)' }}>dad</h2>
       </Box>
       <CustomDataGrid rows={rows} columns={columns} />
     </Box>
