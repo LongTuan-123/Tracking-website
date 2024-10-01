@@ -81,13 +81,13 @@ const button: Theme['components'] = {
         })
       }),
       sizeSmall: ({ theme }) => ({
-        lineHeight: 1.38462,
-        fontSize: theme.typography.body2.fontSize,
-        borderRadius: 'var(--mui-shape-customBorderRadius-sm)'
+        borderRadius: theme.spacing(4),
+        minWidth: theme.spacing(26.25),
+        height: theme.spacing(10)
       }),
       sizeMedium: ({ theme }) => ({
         borderRadius: theme.spacing(4),
-        minWidth: theme.spacing(22),
+        minWidth: theme.spacing(38.75),
         height: theme.spacing(10)
       }),
       sizeLarge: ({ theme }) => ({

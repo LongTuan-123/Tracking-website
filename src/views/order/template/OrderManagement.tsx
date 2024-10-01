@@ -165,9 +165,9 @@ const OrderManagement = () => {
                 </InputAdornment>
               )
             }}
-            placeholder='Search...'
+            placeholder='Order Name...'
           />
-          <Button variant='outlined' color='primary' size='medium' startIcon={<FilterIcon />}>
+          <Button variant='outlined' color='secondary' size='small' startIcon={<FilterIcon />}>
             Filter
           </Button>
         </Box>

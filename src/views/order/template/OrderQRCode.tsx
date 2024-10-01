@@ -1,12 +1,9 @@
 'use client'
 import React from 'react'
-
-
 import {
-  Timeline, TimelineItem, TimelineSeparator, TimelineConnector,
-  TimelineDot, TimelineOppositeContent
+  Timeline, TimelineItem, TimelineSeparator, TimelineConnector, 
+  TimelineDot, TimelineOppositeContent 
 } from '@mui/lab'
-
 import { Grid, Button, Divider, Typography, Box } from '@mui/material'
 
 import HomeAddress from '../../../@core/svg/HomeAddress.svg'
@@ -19,13 +16,14 @@ const OrderManagementQRCode = () => {
   const {
     orderInfo,
     deliveryData,
-    customerInfo,
+    customerInfo,  
+    journeyInfo,   
     handleGenerateQRCode,
     handleSendQRCode,
     handleCancel
-  } = useOrderController(); // Getting the state and handlers from the controller
+  } = useOrderController()
 
-  const renderModeIcon = (mode: any) => {
+  const renderModeIcon = (mode:string) => {
     switch (mode) {
       case 'Air': return <Airplane className="w-5 h-5 mr-1 text-blue" />
       case 'Ocean': return <Boat className="w-5 h-5 mr-1 text-blue" />
@@ -40,35 +38,28 @@ const OrderManagementQRCode = () => {
 
       {/* Main Layout */}
       <Grid container spacing={4}>
-        {/* Left Side: Order Info */}
-        <Grid item xs={12} md={6}>
-          <Box className="p-6 bg-white rounded-lg shadow-md h-[459px]">
-            <Box className="flex justify-between items-center">
-              <Typography variant="h4" className="font-bold">
-                Order ID: <span className="font-normal">{orderInfo.orderId}</span>
-              </Typography>
-              <Typography variant="h5" className="font-bold">
-                Creation Date: <span className="font-normal">{orderInfo.creationDate}</span>
-              </Typography>
-            </Box>
-
-            <Typography variant="h4" className="mt-5 font-bold">
-              Product Name: <span className="font-normal">{orderInfo.product.name}</span>
+        
+      <Grid item xs={12} md={6}>
+        <Box className="p-6 bg-white rounded-lg shadow-md h-[459px]">
+          {/* Flex container for Order ID and Creation Date */}
+          <Box className="flex justify-between items-center">
+            <Typography variant="h4" className="font-bold">
+              Order ID: <span className="font-normal">{orderInfo[0].value}</span>
             </Typography>
-
-            <Typography variant="h5" className="mt-4 font-bold">
-              Ingredients: <span className="font-normal">{orderInfo.product.ingredients.join(', ')}</span>
-            </Typography>
-
-            <Typography variant="h5" className="mt-4 font-bold">
-              Production Date: <span className="font-normal">{orderInfo.product.productionDate}</span>
-            </Typography>
-
-            <Typography variant="h5" className="mt-4 font-bold">
-              Expiration Date: <span className="font-normal">{orderInfo.product.expirationDate}</span>
+            <Typography variant="h5" className="font-bold">
+              Creation Date: <span className="font-normal">{orderInfo[1].value}</span>
             </Typography>
           </Box>
-        </Grid>
+
+          {/* Rest of the fields */}
+          {orderInfo.slice(2).map((field, index) => (
+            <Typography key={index} variant="h5" className="mt-4 font-bold">
+              {field.label}: <span className="font-normal">{field.value}</span>
+            </Typography>
+          ))}
+        </Box>
+      </Grid>
+
 
         {/* Right Side: QR Code */}
         <Grid item xs={12} md={6}>
@@ -101,21 +92,16 @@ const OrderManagementQRCode = () => {
         </Box>
 
         <Grid container spacing={4}>
+          
           {/* Left Section: Customer Info */}
           <Grid item xs={12} md={2.5}>
             <Box className="bg-white rounded-lg p-4">
-              <Typography variant="h5" className="font-bold mb-2">
-                Customer Name: <span className="font-normal">{customerInfo.name}</span>
-              </Typography>
-              <Typography variant="h5" className="font-bold mb-2">
-                Phone Number: <span className="font-normal">{customerInfo.phoneNumber}</span>
-              </Typography>
-              <Typography variant="h5" className="font-bold mb-2">
-                Departure: <span className="font-normal">{customerInfo.journey.departure}</span>
-              </Typography>
-              <Typography variant="h5" className="font-bold mb-2">
-                Arrival: <span className="font-normal">{customerInfo.journey.arrival}</span>
-              </Typography>
+              {/* Map through the customerInfo array */}
+              {customerInfo.map((field, index) => (
+                <Typography key={index} variant="h5" className="font-bold mb-2">
+                  {field.label}: <span className="font-normal">{field.value}</span>
+                </Typography>
+              ))}
             </Box>
           </Grid>
 
@@ -125,7 +111,7 @@ const OrderManagementQRCode = () => {
           <Grid item xs={12} md={7} container>
             <Grid item xs={7}>
               <Timeline position="left">
-                {deliveryData.map((item ,index => (
+                {deliveryData.map((item, index) => (
                   <TimelineItem key={index}>
                     <TimelineOppositeContent>
                       <Box className="text-lg">
@@ -166,15 +152,15 @@ const OrderManagementQRCode = () => {
 
           <Divider orientation="vertical" flexItem className="mx-4" />
 
-          {/* Right Section: Estimated Time and Price */}
+          {/* Right Section: Estimated Time and Price (Journey Info) */}
           <Grid item xs={3} md={1.6}>
             <Box className="text-center bg-white rounded-lg">
-              <Typography variant="h5" className="font-bold mb-2">
-                Estimated time: <span className="font-normal">{customerInfo.journey.estimatedTime}</span>
-              </Typography>
-              <Typography variant="h5" className="font-bold">
-                Price (USD): <span className="font-normal">{customerInfo.priceUSD}</span>
-              </Typography>
+              {/* Map through the journeyInfo array */}
+              {journeyInfo.map((field, index) => (
+                <Typography key={index} variant="h5" className="font-bold mb-2">
+                  {field.label}: <span className="font-normal">{field.value}</span>
+                </Typography>
+              ))}
             </Box>
           </Grid>
         </Grid>
