@@ -24,9 +24,9 @@ const OrderManagementQRCode = () => {
     <Box className="container mx-auto p-4">
       <Typography variant="h3" className="mb-6 font-semibold">QR Code</Typography>
 
-      {/* Main Layout */}
+
       <Grid container spacing={2}>
-        <Grid size={6}> {/* Use size for Grid v2 */}
+        <Grid size={6}>
           <Box className="p-6 bg-white rounded-lg shadow-md h-[459px]">
             <Box className="flex justify-between items-center">
               <Typography variant="h4" className="font-bold">
@@ -44,7 +44,7 @@ const OrderManagementQRCode = () => {
           </Box>
         </Grid>
 
-        {/* Right Side: QR Code */}
+
         <Grid size={6}>
           <Box className="p-6 bg-white rounded-lg shadow-md text-center">
             <img
@@ -67,7 +67,7 @@ const OrderManagementQRCode = () => {
         </Grid>
       </Grid>
 
-      {/* Route Details Section */}
+
       <Box className="mt-4 p-6 bg-white rounded-lg shadow-md">
         <Box className="inline-flex items-center mb-6">
           <Typography variant="h4" className="font-bold mr-2">Route detail:</Typography>
@@ -75,7 +75,6 @@ const OrderManagementQRCode = () => {
         </Box>
 
         <Grid container spacing={2}>
-          {/* Left Section: Customer Info */}
           <Grid size={2.8}>
             <Box className="bg-white rounded-lg p-2">
               {customerInfo.map((field, index) => (
@@ -86,23 +85,22 @@ const OrderManagementQRCode = () => {
             </Box>
           </Grid>
 
-          <Divider orientation="vertical" flexItem className="mx-4" /> {/* Divider between left and middle */}
+          <Divider orientation="vertical" flexItem className="mx-4" /> 
 
-          {/* Middle Section: Address and Mode of Delivery */}
+
           <Grid container size={6.7} alignItems="center">
             <Grid size={6.5}>
               <AddressTimeline deliveryData={deliveryData} />
             </Grid>
 
-            {/* Mode of delivery */}
+
             <Grid size={5.5}>
               <ModeOfDelivery deliveryData={deliveryData} />
             </Grid>
           </Grid>
 
-          <Divider orientation="vertical" flexItem className="mx-4" /> {/* Divider between middle and right */}
+          <Divider orientation="vertical" flexItem className="mx-4" /> 
 
-          {/* Right Section: Estimated Time and Price */}
           <Grid size={1.5}>
             <JourneyInfo journeyInfo={journeyInfo} />
           </Grid>

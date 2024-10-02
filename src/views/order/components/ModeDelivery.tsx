@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Box, Typography } from '@mui/material';
 
+
 import Boat from '@svg/Boat.svg'
 
 import Airplane from '@svg/AirPlane.svg'
