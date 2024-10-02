@@ -1,24 +1,24 @@
 
 export const useOrderController = () => {
 
-  const orderInfo = [
+ const orderInfo = [
     { label: 'Order ID', value: '00000123456' },
     { label: 'Creation Date', value: '09/08/2024' },
     { label: 'Product Name', value: 'Cheese Cake' },
-    { 
-      label: 'Ingredients', 
+    {
+      label: 'Ingredients',
       value: [
-        'Unsweetened chocolate', 
-        'pecans', 
-        'sunflower seed', 
+        'Unsweetened chocolate',
+        'pecans',
+        'sunflower seed',
         'cocoa powder',
-        'lima bean', 
-        'brandy', 
-        'vegemite', 
-        'sorghum', 
-        'muffin', 
-        'water'
-      ].join(', ') 
+        'lima bean',
+        'brandy',
+        'vegemite',
+        'sorghum',
+        'muffin',
+        'water' 
+      ].join(', ')
     },
     { label: 'Production Date', value: '09/06/2024' },
     { label: 'Expiration Date', value: '09/06/2026' }
@@ -30,7 +30,7 @@ export const useOrderController = () => {
     { type: 'Station 2', address: 'Rd. Santa Ana, Illinois 85486', mode: 'Truck' },
     { type: 'Delivery address', address: '7604 Denton Hwy #200', mode: null }
   ];
-  
+
 
   const customerInfo = [
     { label: 'Customer Name', value: 'Company A' },

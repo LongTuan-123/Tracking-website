@@ -13,10 +13,10 @@ interface JourneyInfoProps {
 
 const JourneyInfo: React.FC<JourneyInfoProps> = ({ journeyInfo }) => {
   return (
-    <Box>
+    <Box className="text-center ">
       {journeyInfo.map((field, index) => (
-        <Typography key={index} variant="h5" className="font-bold mb-2">
-          {field.label}: <span className="font-normal">{field.value}</span>
+        <Typography key={index} variant="h5" className="font-bold mb-2 ">
+          {field.label}: <br/> <span className="font-normal">{field.value}</span>
         </Typography>
       ))}
     </Box>

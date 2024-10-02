@@ -1,16 +1,13 @@
 'use client'
 import React from 'react'
 
-import { Grid, Button, Divider, Typography, Box } from '@mui/material'
+import { Button, Divider, Typography, Box } from '@mui/material'
+import Grid from '@mui/material/Grid2'
 
-import { useOrderController } from '../controllers/qrcode.controller'
-
+import { useOrderController } from '../controllers/qrcode.controller.controller'
 import AddressTimeline from '../components/AddressTimeline'
-
 import ModeOfDelivery from '../components/ModeDelivery'
-
 import JourneyInfo from '../components/JourneyInfo'
-
 
 const OrderManagementQRCode = () => {
   const {
@@ -23,14 +20,13 @@ const OrderManagementQRCode = () => {
     handleCancel
   } = useOrderController()
 
-
   return (
     <Box className="container mx-auto p-4">
       <Typography variant="h3" className="mb-6 font-semibold">QR Code</Typography>
 
       {/* Main Layout */}
-      <Grid container spacing={4}>
-        <Grid item xs={12} md={6}>
+      <Grid container spacing={2}>
+        <Grid size={6}> {/* Use size for Grid v2 */}
           <Box className="p-6 bg-white rounded-lg shadow-md h-[459px]">
             <Box className="flex justify-between items-center">
               <Typography variant="h4" className="font-bold">
@@ -49,7 +45,7 @@ const OrderManagementQRCode = () => {
         </Grid>
 
         {/* Right Side: QR Code */}
-        <Grid item xs={12} md={6}>
+        <Grid size={6}>
           <Box className="p-6 bg-white rounded-lg shadow-md text-center">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/800px-QR_code_for_mobile_English_Wikipedia.svg.png"
@@ -72,17 +68,16 @@ const OrderManagementQRCode = () => {
       </Grid>
 
       {/* Route Details Section */}
-      <Box className="mt-6 p-6 bg-white rounded-lg shadow-md">
+      <Box className="mt-4 p-6 bg-white rounded-lg shadow-md">
         <Box className="inline-flex items-center mb-6">
           <Typography variant="h4" className="font-bold mr-2">Route detail:</Typography>
           <Typography variant="h4">DHL Group</Typography>
         </Box>
 
-        <Grid container spacing={4}>
-
+        <Grid container spacing={2}>
           {/* Left Section: Customer Info */}
-          <Grid item xs={12} md={2.5}>
-            <Box className="bg-white rounded-lg p-4">
+          <Grid size={2.8}>
+            <Box className="bg-white rounded-lg p-2">
               {customerInfo.map((field, index) => (
                 <Typography key={index} variant="h5" className="font-bold mb-2">
                   {field.label}: <span className="font-normal">{field.value}</span>
@@ -91,24 +86,24 @@ const OrderManagementQRCode = () => {
             </Box>
           </Grid>
 
-          <Divider orientation="vertical" flexItem className="mx-4" />
+          <Divider orientation="vertical" flexItem className="mx-4" /> {/* Divider between left and middle */}
 
           {/* Middle Section: Address and Mode of Delivery */}
-          <Grid item xs={12} md={7} container>
-            <Grid item xs={7}>
+          <Grid container size={6.7} alignItems="center">
+            <Grid size={6.5}>
               <AddressTimeline deliveryData={deliveryData} />
             </Grid>
 
             {/* Mode of delivery */}
-            <Grid item xs>
+            <Grid size={5.5}>
               <ModeOfDelivery deliveryData={deliveryData} />
             </Grid>
           </Grid>
 
-          <Divider orientation="vertical" flexItem className="mx-4" />
+          <Divider orientation="vertical" flexItem className="mx-4" /> {/* Divider between middle and right */}
 
           {/* Right Section: Estimated Time and Price */}
-          <Grid item xs={3} md={1.6}>
+          <Grid size={1.5}>
             <JourneyInfo journeyInfo={journeyInfo} />
           </Grid>
         </Grid>

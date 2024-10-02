@@ -2,9 +2,11 @@ import React from 'react';
 
 import { Box, Typography } from '@mui/material';
 
-import Boat from '../../../@core/svg/Boat.svg'
-import Truck from '../../../@core/svg/Truck.svg'
-import Airplane from '../../../@core/svg/AirPlane.svg'
+import Boat from '@svg/Boat.svg'
+
+import Airplane from '@svg/AirPlane.svg'
+
+import Truck from '@svg/Truck.svg'
 
 type DeliveryDataItem = {
   mode: string | null;

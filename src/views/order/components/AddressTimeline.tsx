@@ -4,7 +4,7 @@ import { Timeline, TimelineItem, TimelineOppositeContent, TimelineSeparator, Tim
 
 import { Box } from '@mui/material';
 
-import HomeAddress from '../../../@core/svg/HomeAddress.svg';
+import HomeAddress from '@svg/HomeAddress.svg';
 
 type DeliveryDataItem = {
   type: string;
