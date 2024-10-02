@@ -116,3 +116,7 @@ code {
   height: 1000px;
   width: 100%;
 }
+
+.leaflet-routing-alt {
+  display: none !important;
+}
