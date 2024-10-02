@@ -30,6 +30,7 @@ export const useOrderController = () => {
     { type: 'Station 2', address: 'Rd. Santa Ana, Illinois 85486', mode: 'Truck' },
     { type: 'Delivery address', address: '7604 Denton Hwy #200', mode: null }
   ];
+  
 
   const customerInfo = [
     { label: 'Customer Name', value: 'Company A' },
