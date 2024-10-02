@@ -81,21 +81,24 @@ const button: Theme['components'] = {
         })
       }),
       sizeSmall: ({ theme }) => ({
+        fontSize: '1.0625rem',
         borderRadius: theme.spacing(4),
         minWidth: theme.spacing(26.25),
-        height: theme.spacing(10)
+        height: theme.spacing(10) 
+
       }),
       sizeMedium: ({ theme }) => ({
-        borderRadius: theme.spacing(4),
-        minWidth: theme.spacing(38.75),
-        height: theme.spacing(10)
-      }),
-      sizeLarge: ({ theme }) => ({
         fontSize: '1.0625rem',
         lineHeight: 1.529412,
         borderRadius: theme.spacing(4),
         minWidth: theme.spacing(50),
         height: theme.spacing(10)
+      }),
+      sizeLarge: ({ theme }) => ({
+        fontSize: '1.0625rem',
+        borderRadius: theme.spacing(4),
+        width: theme.spacing(42),
+        height: theme.spacing(14)
       }),
 
       startIcon: ({ theme, ownerState }) => ({

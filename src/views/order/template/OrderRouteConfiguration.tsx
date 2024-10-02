@@ -1,24 +1,33 @@
 'use client'
 
-import { useParams } from 'next/navigation'
+import { Box } from '@mui/material'
 
 import OrderMap from '../components/OrderMap'
 import OrderRouteOverview from '../components/OrderRouteOverview'
+import useWindowSize from '@/@core/hooks/useWindowSize'
 
 const OrderRouteConfiguration = () => {
-  const params = useParams<{ tag: string; item: string }>()
-
-  console.log(params)
+  const { height } = useWindowSize()
 
   return (
-    <div className='relative'>
-      <div className='w-full min-h-[600px] '>
+    <Box className='relative'>
+      <Box sx={{ width: '100%', height: `${height ? height - 165 : 610}px` }}>
         <OrderMap />
-      </div>
-      <div className='absolute bottom-2 w-[96%] left-[2%] bg-white rounded-t-lg'>
+      </Box>
+      <Box
+        sx={{
+          zIndex: 99999,
+          position: 'absolute',
+          bottom: 12,
+          width: '96%',
+          left: '2%',
+          backgroundColor: 'white',
+          borderRadius: '8px'
+        }}
+      >
         <OrderRouteOverview />
-      </div>
-    </div>
+      </Box>
+    </Box>
   )
 }
 

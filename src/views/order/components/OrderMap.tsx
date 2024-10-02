@@ -1,14 +1,11 @@
 'use client'
 
-import { useEffect } from 'react'
-
 import type { LatLngExpression } from 'leaflet'
 import { MapContainer, TileLayer } from 'react-leaflet'
 
 import { Box } from '@mui/material'
 
 import RoutingMachine from '@/@core/components/map/RoutingMachine'
-import useCommonStore from '@/store/common-store/useCommonStore'
 
 const startLocation: LatLngExpression = [21.0285, 105.774]
 const endLocation: LatLngExpression = [21.0535, 105.8211]
@@ -39,15 +36,6 @@ const maptiler = {
 }
 
 const OrderMap = () => {
-  const { setWaypoints } = useCommonStore()
-
-  useEffect(() => {
-    setWaypoints([
-      [21.03, 105.78],
-      [21.035, 105.77]
-    ])
-  }, [setWaypoints])
-
   return (
     <Box sx={{ width: '100%', height: '100%', position: 'relative' }}>
       <MapContainer
