@@ -81,6 +81,9 @@ const VerticalMenu = ({ scrollMenu }: { scrollMenu: (container: any, isPerfectSc
         <MenuItem href='/courier-vendor' icon={<i className='ri-bar-chart-box-line' />}>
           Courier vendor
         </MenuItem>
+        <MenuItem href='/retail-page' icon={<i className='ri-bar-chart-box-line' />}>
+          Retailer website
+        </MenuItem>
       </Menu>
     </ScrollWrapper>
   )
