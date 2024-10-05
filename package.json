@@ -27,7 +27,7 @@
     "axios": "^1.7.7",
     "classnames": "^2.5.1",
     "dayjs": "^1.11.13",
-    "leaflet": "^1.9.4",
+    "leaflet": "^1.9.4", 
     "leaflet-routing-machine": "^3.2.12",
     "next": "^14.2.3",
     "nextjs": "^0.0.3",
