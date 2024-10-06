@@ -30,8 +30,8 @@ const renderModeIcon = (mode:string) => {
 const ModeOfDelivery: React.FC<ModeOfDeliveryProps> = ({deliveryData}) => {
   return (
     <Box className="ml-4 mt-1">
-      {deliveryData.map((item:any, index:any) => (
-        <Box key={index} className="flex items-center mb-12">
+      {deliveryData.map((item:any) => (
+        <Box key={item.id} className="flex items-center mb-12">
           {item.mode && (
             <>
               <Typography variant="h5" className="text-gray-600 mr-2">Mode of Transportation:</Typography>

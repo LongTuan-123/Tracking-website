@@ -31,7 +31,7 @@ const OrderManagementQRCode = () => {
               </Typography>
             </Box>
             {orderInfo.slice(2).map((field) => (
-              <Typography key={field.label} variant='h5' className='mt-4 font-bold'>
+              <Typography key={field.id} variant='h5' className='mt-4 font-bold'>
                 {field.label}: <span className='font-normal'>{field.value}</span>
               </Typography>
             ))}
@@ -47,7 +47,7 @@ const OrderManagementQRCode = () => {
             />
             <Box className='flex justify-center mt-5'>
               <Button variant='outlined' color='primary' size='medium' className='mr-4' onClick={handleGenerateQRCode}>
-                Geerate QR code
+                Generate QR code
               </Button>
               <Button variant='contained' color='primary' size='medium' onClick={handleSendQRCode}>
                 Send QR code
@@ -71,8 +71,8 @@ const OrderManagementQRCode = () => {
         <Grid container spacing={2}>
           <Grid size={2.8}>
             <Box className='bg-white rounded-lg p-2'>
-              {customerInfo.map((field, index) => (
-                <Typography key={index} variant='h5' className='font-bold mb-2'>
+              {customerInfo.map((field) => (
+                <Typography key={field.id} variant='h5' className='font-bold mb-2'>
                   {field.label}: <span className='font-normal'>{field.value}</span>
                 </Typography>
               ))}

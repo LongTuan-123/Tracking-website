@@ -5,19 +5,19 @@ import Link from 'next/link'
 import { Box, Typography, InputBase, IconButton, Button, TextField, Divider } from '@mui/material'
 
 const rightSideLinks = [
-  { label: 'Find a Store', href: '/' },
-  { label: 'Track the order', href: '/' },
-  { label: 'Join Us', href: '/' },
-  { label: 'Sign In', href: '/' }
+  { id: '1', label: 'Find a Store', href: '/' },
+  { id: '2', label: 'Track the order', href: '/' },
+  { id: '3', label: 'Join Us', href: '/' },
+  { id: '4', label: 'Sign In', href: '/' }
 ]
 
 const navigationLabels = [
-  { label: 'Label', href: '/' },
-  { label: 'Label', href: '/' },
-  { label: 'Label', href: '/' },
-  { label: 'Label', href: '/' },
-  { label: 'Label', href: '/' },
-  { label: 'Label', href: '/' }
+  { id: '1', label: 'Label', href: '/' },
+  { id: '2', label: 'Label', href: '/' },
+  { id: '3', label: 'Label', href: '/' },
+  { id: '4', label: 'Label', href: '/' },
+  { id: '5', label: 'Label', href: '/' },
+  { id: '6', label: 'Label', href: '/' }
 ]
 
 const RetailWebsite = () => {
@@ -27,15 +27,17 @@ const RetailWebsite = () => {
       sx={{ height: '1024px', width: '1440px' }}
     >
       <Box className='w-full h-full bg-white p-4'>
+        {/* First Header Layer */}
         <Box className='flex justify-between items-center mb-2'>
           <Typography variant='body2' className='text-gray-500'>
             Hotline: <strong>01234567891</strong>
           </Typography>
 
+          {/* Right-side Links */}
           <Box className='flex gap-4'>
-            {rightSideLinks.map((link, index) => (
-              <React.Fragment key={index}>
-                {index > 0 && <Divider orientation='vertical' flexItem className='mx' />}
+            {rightSideLinks.map((link) => (
+              <React.Fragment key={link.id}>
+                {link.id !== '1' && <Divider orientation='vertical' flexItem className='mx' />}
                 <Link href={link.href}>
                   <Typography
                     variant='body2'
@@ -49,6 +51,7 @@ const RetailWebsite = () => {
           </Box>
         </Box>
 
+        {/* Second Header Layer */}
         <Box className='flex justify-between items-center mb-6'>
           <Box
             sx={{
@@ -64,15 +67,18 @@ const RetailWebsite = () => {
             <Typography variant='h5'>Logo</Typography>
           </Box>
 
+          {/* Navigation Labels */}
           <Box className='flex gap-4'>
-            {navigationLabels.map((navItem, index) => (
-              <Typography key={index} variant='body1' className='text-black mr-4'>
+            {navigationLabels.map((navItem) => (
+              <Typography key={navItem.id} variant='body1' className='text-black mr-4'>
                 {navItem.label}
               </Typography>
             ))}
           </Box>
 
+          {/* Search and Icons */}
           <Box className='flex items-center gap-4'>
+            {/* Search Box */}
             <Box className='flex items-center rounded-full bg-gray-100 px-4 py-2'>
               <IconButton className='text-gray-500'>
                 <i className='ri-search-line' style={{ fontSize: '24px' }}></i>
@@ -80,6 +86,7 @@ const RetailWebsite = () => {
               <InputBase placeholder='Search' />
             </Box>
 
+            {/* Icons (heart and cart) */}
             <IconButton>
               <i className='ri-heart-line' style={{ fontSize: '24px' }}></i>
             </IconButton>
@@ -89,6 +96,7 @@ const RetailWebsite = () => {
           </Box>
         </Box>
 
+        {/* Main Section (Track Delivery Progress) */}
         <Box className='flex flex-col items-center mt-16'>
           <Typography variant='h2' className='text-black font-bold mb-4'>
             Track delivery progress of an order
