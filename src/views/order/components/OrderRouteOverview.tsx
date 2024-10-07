@@ -1,7 +1,7 @@
 import { Box, Button } from '@mui/material'
 
 import InputInfo from './InputInfo'
-import DashedArrowIcon from '../../../@core/svg/DashedArrowIcon.svg'
+import DashedArrowIcon from '@svg/DashedArrowIcon.svg'
 
 const OrderRouteOverview = () => {
   return (

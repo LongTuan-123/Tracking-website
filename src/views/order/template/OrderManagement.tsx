@@ -4,13 +4,13 @@ import { useMemo, useCallback } from 'react'
 import { Box, Button, Chip, IconButton, InputAdornment, TextField, Typography } from '@mui/material'
 import type { GridColDef, GridRenderCellParams } from '@mui/x-data-grid'
 
-import FilterIcon from '../../../@core/svg/FilterIcon.svg'
-import ReloadIcon from '../../../@core/svg/ReloadIcon.svg'
+import FilterIcon from '@svg/FilterIcon.svg'
+import ReloadIcon from '@svg/ReloadIcon.svg'
 import CustomDataGrid from '@/components/CustomDataGrid'
 import CustomPopover from '@/components/CustomPopover'
-import QRCodeIcon from '../../../@core/svg/QRCodeIcon.svg'
-import PencilIcon from '../../../@core/svg/PencilIcon.svg'
-import EyeIcon from '../../../@core/svg/EyeIcon.svg'
+import QRCodeIcon from '@svg/QRCodeIcon.svg'
+import PencilIcon from '@svg/PencilIcon.svg'
+import EyeIcon from '@svg/EyeIcon.svg'
 
 const successPopoverList = [
   { id: 1, content: 'Configure route', icon: <PencilIcon />, subPath: 'route-configuration' },
@@ -165,9 +165,9 @@ const OrderManagement = () => {
                 </InputAdornment>
               )
             }}
-            placeholder='Search...'
+            placeholder='Order Name...'
           />
-          <Button variant='outlined' color='primary' size='medium' startIcon={<FilterIcon />}>
+          <Button variant='outlined' color='secondary' size='small' startIcon={<FilterIcon />}>
             Filter
           </Button>
         </Box>

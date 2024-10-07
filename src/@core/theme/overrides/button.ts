@@ -81,21 +81,23 @@ const button: Theme['components'] = {
         })
       }),
       sizeSmall: ({ theme }) => ({
-        lineHeight: 1.38462,
-        fontSize: theme.typography.body2.fontSize,
-        borderRadius: 'var(--mui-shape-customBorderRadius-sm)'
+        fontSize: '1.0625rem',
+        borderRadius: 'var(--mui-shape-customBorderRadius-xl)',
+        minWidth: theme.spacing(26.25),
+        height: theme.spacing(10)
       }),
       sizeMedium: ({ theme }) => ({
-        borderRadius: theme.spacing(4),
-        minWidth: theme.spacing(22),
+        fontSize: '1.0625rem',
+        lineHeight: 1.529412,
+        borderRadius: 'var(--mui-shape-customBorderRadius-xl)',
+        minWidth: theme.spacing(50),
         height: theme.spacing(10)
       }),
       sizeLarge: ({ theme }) => ({
         fontSize: '1.0625rem',
-        lineHeight: 1.529412,
-        borderRadius: theme.spacing(4),
-        minWidth: theme.spacing(50),
-        height: theme.spacing(10)
+        borderRadius: 'var(--mui-shape-customBorderRadius-xl)',
+        width: theme.spacing(42),
+        height: theme.spacing(14)
       }),
 
       startIcon: ({ theme, ownerState }) => ({
