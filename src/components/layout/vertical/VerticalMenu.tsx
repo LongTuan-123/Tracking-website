@@ -9,7 +9,7 @@ import PerfectScrollbar from 'react-perfect-scrollbar'
 import type { VerticalMenuContextProps } from '@menu/components/vertical-menu/Menu'
 
 // Component Imports
-import { Menu, SubMenu, MenuItem } from '@menu/vertical-menu'
+import { Menu, MenuItem } from '@menu/vertical-menu'
 
 // Hook Imports
 import useVerticalNav from '@menu/hooks/useVerticalNav'
@@ -61,14 +61,11 @@ const VerticalMenu = ({ scrollMenu }: { scrollMenu: (container: any, isPerfectSc
         renderExpandedMenuItemIcon={{ icon: <i className='ri-circle-line' /> }}
         menuSectionStyles={menuSectionStyles(theme)}
       >
-        <SubMenu
-          label='Dashboards'
-          icon={<i className='ri-home-smile-line' />}
-
-          // suffix={<Chip label='5' size='small' color='error' />}
-        >
-          <MenuItem href='/'>Analytics</MenuItem>
-        </SubMenu>
+  
+        <MenuItem href='/' icon={<i className='ri-home-smile-line' />}>
+        Dashboards
+        </MenuItem>
+      
         <MenuItem href='/account-settings' icon={<i className='ri-user-settings-line' />}>
           Account Settings
         </MenuItem>

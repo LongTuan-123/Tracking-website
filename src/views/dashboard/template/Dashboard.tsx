@@ -71,12 +71,11 @@ const DashboardWithDropdown = () => {
             <Grid container spacing={2}>
               <Grid item xs={12} md={8.5}>
                 <Box>
-
                   <Box className="h-96 bg-gray-200 rounded-lg mb-4">
                     <OrderMap/>
                   </Box>
-                  {ordersDetail.map((order, index) => (
-               <Box className="p-4 border rounded flex justify-between items-center">
+                  {ordersDetail.map((order) => (
+                  <Box key={order.id} className="p-4 border rounded flex justify-between items-center">
                     <Box>
                       <Typography variant="subtitle2">
                         <strong>{order.label}</strong>
