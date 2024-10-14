@@ -44,4 +44,6 @@ src/assets/iconify-icons/generated-icons.css
 # package-lock.json
 package-lock.json
 
-
+#vscode
+.vscode
+.vscode/settings.json
